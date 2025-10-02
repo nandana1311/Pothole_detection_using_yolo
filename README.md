@@ -1,6 +1,6 @@
-🛣️ AI-Powered Pothole Detection and Road Condition Monitoring
+###🛣️ AI-Powered Pothole Detection and Road Condition Monitoring
 
-📝 Overview
+#📝 Overview
 This project implements a real-time object detection model to identify and locate potholes in images and video streams. The primary goal is to leverage Computer Vision technology, specifically the YOLO (You Only Look Once) architecture, to assist municipal and transportation agencies in rapidly assessing road damage, prioritizing maintenance efforts, and ultimately enhancing public safety.
 
 The core logic, including training, validation, and inference, is contained within the uploaded colab Notebook: Pothole_detection.ipynb.
