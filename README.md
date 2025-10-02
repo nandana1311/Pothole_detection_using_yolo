@@ -7,7 +7,7 @@ The core logic, including training, validation, and inference, is contained with
 
 Clone the repository and install the required dependencies:
 ## 1. Clone the repository
-git clone https://github.com/your-username/Pothole-Detection.git
+git clone https://github.com//nandana1311/Pothole-Detection.git
 
 
 ## Note
