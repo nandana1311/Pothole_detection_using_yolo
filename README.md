@@ -8,7 +8,7 @@ The core logic, including training, validation, and inference, is contained with
 Clone the repository and install the required dependencies:
 ## 1. Clone the repository
 git clone https://github.com/your-username/Pothole-Detection.git
-cd Pothole-Detection
+
 
 ## Note
 The trained model weights (best.pt) are included in the repository->check runs.zip
