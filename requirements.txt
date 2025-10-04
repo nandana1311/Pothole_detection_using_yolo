@@ -3,4 +3,3 @@ ultralytics==8.3.204
 pillow
 numpy
 opencv-python-headless==4.10.0.84
-
