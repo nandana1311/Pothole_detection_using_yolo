@@ -6,12 +6,8 @@ import numpy as np
 import io
 
 st.title("Pothole Detection App")
-
 st.write("This application uses a YOLO model to detect potholes in uploaded images.")
-st.write("To use the app, simply upload an image using the file uploader below.")
-
-# Define the HOME directory (assuming the script is run from the same location as the notebook)
-HOME = os.getcwd()
+st.write("Upload an image using the file uploader below.")
 
 # Load the trained model
 model = YOLO('best.pt')
@@ -20,17 +16,17 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png
 
 if uploaded_file is not None:
     st.success("Image uploaded successfully! Processing...")
-    # To read file as bytes:
-    bytes_data = uploaded_file.getvalue()
-    # To convert to PIL Image:
-    image = Image.open(io.BytesIO(bytes_data))
+    image = Image.open(io.BytesIO(uploaded_file.getvalue()))
     st.image(image, caption="Uploaded Image", use_column_width=True)
 
-    # Perform inference
-    results = model.predict(image)
+    # Convert PIL to numpy
+    img_array = np.array(image)
 
-    # Display and save the results
+    # Perform inference
+    results = model.predict(img_array, conf=0.5, verbose=False)
+
+    # Display predictions
     for r in results:
-        im_array = r.plot()  # plot a BGR numpy array of predictions
-        im = Image.fromarray(im_array[..., ::-1])  # RGB PIL image
+        im_array = r.plot()  # BGR array
+        im = Image.fromarray(im_array[..., ::-1])  # Convert to RGB
         st.image(im, caption="Image with Predictions", use_column_width=True)
