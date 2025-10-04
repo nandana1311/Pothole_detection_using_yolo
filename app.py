@@ -14,7 +14,7 @@ st.write("To use the app, simply upload an image using the file uploader below."
 HOME = os.getcwd()
 
 # Load the trained model
-model = YOLO(f'{HOME}/runs/detect/train/weights/best.pt')
+model = YOLO('best.pt')
 
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
